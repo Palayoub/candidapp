@@ -1,0 +1,25 @@
+oc_platform_home:
+    path:     /
+    defaults: { _controller: OCPlatformBundle:Advert:home }
+oc_platform_add:
+    path:     /add
+    defaults: { _controller: OCPlatformBundle:Advert:add }
+oc_platform_show:
+    path:     /show
+    defaults: { _controller: OCPlatformBundle:Advert:show }
+oc_platform_condition:
+    path:     /condition
+    defaults: { _controller: OCPlatformBundle:Advert:condition }
+oc_platform_contact:
+    path:     /contact
+    defaults: { _controller: OCPlatformBundle:Advert:contact }
+login:
+    pattern:   /login
+    defaults: { _controller: OCPlatformBundle:Advert:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout
+

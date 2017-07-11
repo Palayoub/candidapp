@@ -1,0 +1,55 @@
+{# src/OC/PlatformBundle/Resources/views/layout.html.twig #}
+
+{% extends ":default:index.html.twig" %}
+
+{% block title %}
+  Annonces - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+   <div class="panel panel-default">
+        <div class="panel-heading">
+              <h3 class="panel-title">La liste de candidatures : </h3>
+        </div>
+   </div>
+      <div class="col-md-6" >
+      <table class="table table-condensed" style="width:700px">
+         <thead>
+              <tr>
+                <th>#id</th>
+                <th>CNE</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Moyen bac</th>
+                <th>Etablissement</th>
+                <th>La date</th>
+                <th>Statut</th>
+              </tr>
+         </thead>
+  {% for student in students %}
+            <tbody>
+              <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.cne }}</td>
+                <td>{{ student.prenom }}</td>
+                <td>{{ student.nom }}</td>
+                <td>{{ student.moyenbac }}</td>
+                <td>{{ student.etablissement }}</td>
+                <td>{{ student.date|date('Y-m-d H:m:s') }}</td>
+                {% if student.statut == -1 %}
+                <td><h5><span class="label label-warning">En cours</span></h5></td>
+                {% elseif student.statut == 1 %}
+                <td><h5><span class="label label-success">Accepté</span></h5></td>
+                {% else %}
+                <td><h5><span class="label label-danger">Réfusé</span></h5></td>
+                {% endif %}
+              </tr>
+            </tbody>
+  {% endfor %}
+    </table>
+    </div>
+  
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{# src/OC/PlatformBundle/Resources/views/layout.html.twig #}
+
+{% extends ":default:index.html.twig" %}
+
+{% block title %}
+  Annonces - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+  
+      <div class="page-header">
+          <center><h1>Informations</h1></center>
+      </div>
+      <div class="well">
+          <p> Ce concours est ouvert aux : Titulaires du DEUST, DEUG ou de tout autre diplôme reconnu équivalent, obtenu dans le domaine de formation de la filière, et ayant :<br><br>
+              <span class="label label-info">  </span>&nbsp;&nbsp;&nbsp;Réussi le DEUST ou DEUG en trois ans maximum, immédiatement après le Baccalauréat<br>
+              <span class="label label-info">  </span>&nbsp;&nbsp;&nbsp;Obtenu le DEUST ou DEUG avec au moins une mention Assez-Bie<br>
+              <br>La sélection se fera par ordre de mérite selon les résultats obtenus;<br>
+              Ce concours concerne l'accès en 1ère année des filières :<br><br>
+          <span class="label label-info">  </span>&nbsp;&nbsp;&nbsp;Géoinformation<br>
+          <span class="label label-info">  </span>&nbsp;&nbsp;&nbsp;Génie Electrique–mention: Electronique,Electrotechnique et Automatique<br>
+          <span class="label label-info">  </span>&nbsp;&nbsp;&nbsp;Génie Mécanique - mention : Gestion et Organisation industrielle<br>
+          <span class="label label-info">  </span>&nbsp;&nbsp;&nbsp;<u>Logiciel et Système Informatique</u><br>
+          </p>
+      </div>
+
+
+{% endblock %}

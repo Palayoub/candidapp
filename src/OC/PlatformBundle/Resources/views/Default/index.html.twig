@@ -1,0 +1,85 @@
+{# src/OC/PlatformBundle/Resources/views/layout.html.twig #}
+
+{% extends ":default:index.html.twig" %}
+
+{% block title %}
+  Annonces - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+  
+{# src/OC/PlatformBundle/Resources/views/Advert/form.html.twig #}
+
+
+ <div class="panel panel-default">
+        <div class="panel-heading">
+              <h3 class="panel-title">Soumettre une candidature : </h3>
+        </div>
+    {% if value == 0 %}
+            <div class="panel-body">
+                <div class="alert alert-success" role="alert">
+                    <center><strong>Well done!</strong> Opération réalisée avec succés.</center>
+                 </div>
+        <div class="col-sm-4">
+          <div class="list-group" style="width:790px">
+            <a href="{{ path('oc_platform_home') }}" class="list-group-item">Retourner à la page d'accueil</a>
+            <a href="{{ path('oc_platform_show') }}" class="list-group-item">Soumettre une autre candidature</a>
+            <a href="{{ path('oc_platform_contact') }}" class="list-group-item">Nous contacter pour plus d'informations</a>
+          </div>
+        </div><!-- /.col-sm-4 -->
+            </div>
+    {% elseif value == 1 %}
+        <div class="panel-body">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_errors(form) }}
+        <div class="form-group">
+            {{ form_label(form.prenom, "Votre prenom : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            
+            {{ form_errors(form.prenom) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.nom, "Votre nom : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(form.nom) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.cne, "Votre CNE : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(form.cne) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.cne, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.moyenbac, "Note du baccalauréat : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(form.moyenbac) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.moyenbac, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.etablissement, "Etablissement d'origine : ", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(form.etablissement) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.etablissement, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+        <div class="form-group">
+                        {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+            <div class="col-sm-4">
+        </div>             
+        </div>
+                        {{ form_rest(form) }}
+            {{ form_end(form) }}
+        </div>
+    <div class="text-warning">
+        <span class="label label-warning">Warning!</span> Les originaux ou copies des pièces justificatives doivent être envoyés à l'adresse : <a href="{{ path('oc_platform_contact') }}">clique-ici.</a>
+    </div>
+    {% endif %}
+ </div>
+
+{% endblock %}

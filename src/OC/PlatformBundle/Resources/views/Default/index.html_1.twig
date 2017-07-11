@@ -1,0 +1,32 @@
+{# src/OC/PlatformBundle/Resources/views/layout.html.twig #}
+
+{% extends ":default:index.html.twig" %}
+
+{% block title %}
+  Annonces - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+  
+{# src/OC/PlatformBundle/Resources/views/Advert/form.html.twig #}
+
+
+ <div class="panel panel-default">
+        <div class="panel-heading">
+              <h3 class="panel-title">Soumettre une candidature : </h3>
+        </div>
+    {% if value == 0 %}
+            <div class="panel-body">
+              COOOOOL!
+            </div>
+    {% elseif value == 1 %}
+        <div class="panel-body">
+        {{ form(form) }}
+        </div>
+    {% endif %}
+    <div class="text-warning">
+        <span class="label label-warning">Warning!</span> Les originaux ou copies des pièces justificatives doivent être envoyés à l'adresse : <a href="{{ path('oc_platform_contact') }}">clique-ici.</a>
+    </div>
+ </div>
+
+{% endblock %}
